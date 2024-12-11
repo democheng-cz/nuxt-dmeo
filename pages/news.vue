@@ -9,17 +9,39 @@
 			</li>
 		</ul>
 		<p v-else>加载中...</p>
+		<!-- 清除缓存的按钮 -->
+		<button @click="clear">清除缓存</button>
 	</div>
 </template>
 
 <script setup>
-import { useAsyncData } from "#app"
-
-const { data, error } = await useAsyncData("news", () => $fetch("/api/test"))
-
-if (error.value) {
-	console.error("数据加载失败:", error.value)
-}
+const nuxtApp = useNuxtApp()
+// 确保缓存生效
+const { data, clear } = await useAsyncData(
+	"news", // 使用固定的key
+	() => {
+		return $fetch("/api/test")
+	},
+	{
+		transform(value) {
+			return {
+				...value,
+				date: Date.now() + 6 * 1000, // 过期时间
+			}
+		},
+		getCachedData(key) {
+			const data = nuxtApp.payload.data[key] || nuxtApp.static.data[key]
+			console.log(data)
+			if (!data) return
+			const date = data.date
+			// 过期时间
+			const isExpirTime = Date.now() > date
+			// 过期了
+			if (isExpirTime) return
+			else return data
+		},
+	}
+)
 
 const news = data.value?.news || []
 </script>

@@ -6,7 +6,6 @@ export default defineNuxtConfig({
 
 	app: {
 		baseURL: "/", // 修改这里，使用相对路径
-		buildAssetsDir: "/_nuxt/", // 指定资源文件目录
 	},
 
 	nitro: {
