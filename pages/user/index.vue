@@ -1,10 +1,13 @@
 <template>
-	<div>这是user页面</div>
+	<div>
+		<h1>用户页面</h1>
+		<p>这里是用户页面的内容。</p>
+	</div>
 </template>
 
 <script lang="ts" setup>
 definePageMeta({
-	layout: "default",
+	layout: "custom-layout",
 })
 </script>
 
