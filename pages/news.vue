@@ -10,7 +10,7 @@
 		</ul>
 		<p v-else>加载中...</p>
 		<!-- 清除缓存的按钮 -->
-		<button @click="clear">清除缓存</button>
+		<button class="bg-orange-400 p-1 rounded" @click="clear">清除缓存</button>
 	</div>
 </template>
 

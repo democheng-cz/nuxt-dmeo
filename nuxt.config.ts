@@ -8,6 +8,7 @@ export default defineNuxtConfig({
 		baseURL: "/", // 修改这里，使用相对路径
 	},
 
+	// 输出静态页面
 	nitro: {
 		output: {
 			// publicDir: "dist",
@@ -17,6 +18,9 @@ export default defineNuxtConfig({
 			ignore: [],
 		},
 	},
+
+	// 模块
+	modules: ["@nuxtjs/tailwindcss"],
 
 	plugins: ["~/plugins/test-plugin.ts"],
 })
