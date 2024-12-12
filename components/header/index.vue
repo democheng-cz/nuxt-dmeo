@@ -15,6 +15,9 @@
 				<li class="nav-item">
 					<NuxtLink :to="{ path: '/poem' }">诗词展示</NuxtLink>
 				</li>
+				<li class="nav-item">
+					<NuxtLink :to="{ path: '/image' }">图片展示</NuxtLink>
+				</li>
 			</ul>
 		</nav>
 	</div>

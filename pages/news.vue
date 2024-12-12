@@ -46,8 +46,8 @@ const news = data.value?.news || []
 
 // 线上接口测试
 const { data: bluneData } = useAsyncData("blune", () => {
-	return $fetch("/onlin-api/login", {
-		method: "POST",
+	return $fetch("https://ggtools.thinkerx.com/user_num_statistics", {
+		method: "get",
 	})
 })
 console.log(bluneData, "bluneData")

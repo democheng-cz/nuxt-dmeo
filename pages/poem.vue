@@ -21,19 +21,9 @@ definePageMeta({
 	requiredPermission: false,
 })
 
-const { data } = await useAsyncData<any>(
-	"poem",
-	() => {
-		return $fetch("/local-api/poem")
-	},
-	{
-		transform(value) {
-			return value.data.poem
-		},
-	}
-)
-const poem = ref<any>({})
-poem.value = data.value || {}
+import { usePoem } from "~/composables/usePoem"
+
+const { poem } = usePoem()
 </script>
 
 <style scoped>
