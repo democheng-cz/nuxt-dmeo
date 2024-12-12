@@ -10,7 +10,9 @@
 		</ul>
 		<p v-else>加载中...</p>
 		<!-- 清除缓存的按钮 -->
-		<button class="bg-orange-400 p-1 rounded" @click="clear">清除缓存</button>
+		<button class="bg-orange-400 p-1 rounded" @click="handleClear">
+			清除缓存
+		</button>
 	</div>
 </template>
 
@@ -45,12 +47,16 @@ const { data, clear } = await useAsyncData(
 const news = data.value?.news || []
 
 // 线上接口测试
-const { data: bluneData } = useAsyncData("blune", () => {
+const { data: bluneData } = await useAsyncData("blune", () => {
 	return $fetch("https://ggtools.thinkerx.com/user_num_statistics", {
 		method: "get",
 	})
 })
 console.log(bluneData, "bluneData")
+const handleClear = () => {
+	clear()
+	throw "test"
+}
 </script>
 
 <style scoped>
