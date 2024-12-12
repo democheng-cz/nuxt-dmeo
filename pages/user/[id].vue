@@ -12,16 +12,8 @@ const query = route.query
 console.log(route.params)
 console.log(query)
 
-// 验证参数
-const validateParams = () => {
-	const id = route.params.id as string
-	if (!id || !/^\d+$/.test(id)) {
-		navigateTo("/404")
-	}
-}
-
 onMounted(() => {
-	validateParams()
+	// validateParams()
 })
 </script>
 

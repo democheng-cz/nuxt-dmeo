@@ -13,6 +13,14 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+	title: "诗词展示",
+	layout: "custom-layout",
+	middleware: ["check-premission"],
+	// 自定义meat属性
+	requiredPermission: true,
+})
+
 const { data } = await useAsyncData<any>(
 	"poem",
 	() => {
