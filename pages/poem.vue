@@ -18,7 +18,7 @@ definePageMeta({
 	layout: "custom-layout",
 	middleware: ["check-premission"],
 	// 自定义meat属性
-	requiredPermission: true,
+	requiredPermission: false,
 })
 
 const { data } = await useAsyncData<any>(

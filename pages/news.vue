@@ -46,7 +46,9 @@ const news = data.value?.news || []
 
 // 线上接口测试
 const { data: bluneData } = useAsyncData("blune", () => {
-	return $fetch("/onlin-api/login")
+	return $fetch("/onlin-api/login", {
+		method: "POST",
+	})
 })
 console.log(bluneData, "bluneData")
 </script>
