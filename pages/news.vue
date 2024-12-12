@@ -46,13 +46,6 @@ const { data, clear } = await useAsyncData(
 )
 const news = data.value?.news || []
 
-// 线上接口测试
-const { data: bluneData } = await useAsyncData("blune", () => {
-	return $fetch("https://ggtools.thinkerx.com/user_num_statistics", {
-		method: "get",
-	})
-})
-console.log(bluneData, "bluneData")
 const handleClear = () => {
 	clear()
 	throw "test"

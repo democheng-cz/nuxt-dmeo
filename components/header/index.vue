@@ -18,6 +18,12 @@
 				<li class="nav-item">
 					<NuxtLink :to="{ path: '/image' }">图片展示</NuxtLink>
 				</li>
+				<li class="nav-item">
+					<NuxtLink :to="{ path: '/asyncData' }">setTimeout</NuxtLink>
+				</li>
+				<li class="nav-item">
+					<NuxtLink :to="{ path: '/awaitData' }">await</NuxtLink>
+				</li>
 			</ul>
 		</nav>
 	</div>
