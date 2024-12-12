@@ -16,7 +16,7 @@
 const { data } = await useAsyncData<any>(
 	"poem",
 	() => {
-		return $fetch("http://127.0.0.1:8080/api/poem")
+		return $fetch("/local-api/poem")
 	},
 	{
 		transform(value) {
