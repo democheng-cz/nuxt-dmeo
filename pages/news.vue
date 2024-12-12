@@ -42,8 +42,13 @@ const { data, clear } = await useAsyncData(
 		},
 	}
 )
-
 const news = data.value?.news || []
+
+// 线上接口测试
+const { data: bluneData } = useAsyncData("blune", () => {
+	return $fetch("/onlin-api/login")
+})
+console.log(bluneData, "bluneData")
 </script>
 
 <style scoped>
